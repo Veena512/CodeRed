@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GradeSync - Examination Management</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Welcome Page -->
+    <div id="welcomePage" class="container">
+        <h1>Welcome to GradeSync</h1>
+        <button onclick="showSignup()">Sign Up</button>
+    </div>
+
+    <!-- Signup Page -->
+    <div id="signupPage" class="container hidden">
+        <h2>Sign Up</h2>
+        <input type="text" id="firstName" placeholder="First Name">
+        <input type="text" id="lastName" placeholder="Last Name">
+        <input type="text" id="institution" placeholder="Institution Name">
+        <input type="email" id="email" placeholder="Email">
+        <input type="tel" id="phone" placeholder="Phone Number">
+        <button onclick="sendOTP()">Get OTP</button>
+    </div>
+
+    <!-- OTP Verification Page -->
+    <div id="otpPage" class="container hidden">
+        <h2>Enter OTP</h2>
+        <input type="text" id="otp" placeholder="Enter OTP">
+        <button onclick="verifyOTP()">Verify</button>
+    </div>
+
+    <!-- Role Selection Page -->
+    <div id="roleSelectionPage" class="container hidden">
+        <h2>Select Your Role</h2>
+        <button onclick="selectRole('admin')">Admin</button>
+        <button onclick="selectRole('student')">Student</button>
+        <button onclick="selectRole('teacher')">Teacher</button>
+    </div>
+
+    <!-- Student Dashboard -->
+    <div id="studentDashboard" class="container hidden">
+        <h2>Student Dashboard</h2>
+        <nav>
+            <button onclick="showExams()">Exams</button>
+        </nav>
+        <div id="examSection" class="hidden">
+            <button onclick="showScheduledExams()">Scheduled Exams</button>
+            <button onclick="showCompletedExams()">Completed Exams</button>
+        </div>
+    </div>
+
+    <!-- Teacher Dashboard -->
+    <div id="teacherDashboard" class="container hidden">
+        <h2>Teacher Dashboard</h2>
+        <button onclick="createExam()">Create Exam</button>
+    </div>
+
+    <!-- Admin Dashboard -->
+    <div id="adminDashboard" class="container hidden">
+        <h2>Admin Dashboard</h2>
+        <button onclick="monitorExams()">Monitor Exams</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
